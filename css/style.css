@@ -45,19 +45,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 80px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    margin-left: auto;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -67,18 +66,10 @@ body {
 }
 
 .logo-img {
-    height: 70px;
+    height: 90px;
     width: auto;
     border-radius: 5px;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-}
-
-.logo-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 1px;
-    display: none; /* Ocultar el texto */
 }
 
 .logo-highlight {
@@ -90,7 +81,11 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 0;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-item {
@@ -100,10 +95,11 @@ body {
 .nav-link {
     color: white;
     text-decoration: none;
-    padding: 25px 20px;
+    padding: 25px 15px;
     display: block;
     transition: var(--transition);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .nav-link:hover {
@@ -204,7 +200,7 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 48px;
+    font-size: 56px;
     color: var(--primary-color);
     margin-bottom: 15px;
     line-height: 1.2;
@@ -212,14 +208,14 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 18px;
+    font-size: 22px;
     color: var(--secondary-color);
     margin-bottom: 30px;
     font-weight: 600;
 }
 
 .hero-description {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.8;
     color: #555;
 }
@@ -301,27 +297,17 @@ body {
         display: flex;
     }
 
-    .nav-logo {
-        gap: 8px;
-    }
-
-    .logo-img {
-        height: 55px;
-    }
-
-    .logo-text {
-        font-size: 18px;
-        display: none; /* Mantener oculto en móvil */
-    }
+    .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 80px;
         flex-direction: column;
         background-color: var(--primary-color);
         width: 100%;
         text-align: center;
         transition: var(--transition);
         gap: 0;
+        justify-content: flex-start;
     }
 
     .nav-menu.active {
@@ -331,6 +317,27 @@ body {
     .nav-link {
         padding: 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 16px;
+    }
+
+    .nav-logo {
+        margin-left: 0;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 16px;
     }
 
     .dropdown-menu {
