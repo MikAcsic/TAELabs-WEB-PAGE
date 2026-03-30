@@ -67,7 +67,7 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 70px;
     width: auto;
     border-radius: 5px;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
@@ -78,6 +78,7 @@ body {
     font-weight: bold;
     color: white;
     letter-spacing: 1px;
+    display: none; /* Ocultar el texto */
 }
 
 .logo-highlight {
@@ -305,11 +306,12 @@ body {
     }
 
     .logo-img {
-        height: 40px;
+        height: 55px;
     }
 
     .logo-text {
         font-size: 18px;
+        display: none; /* Mantener oculto en móvil */
     }
         position: fixed;
         left: -100%;
