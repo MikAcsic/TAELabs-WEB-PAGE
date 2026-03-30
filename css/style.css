@@ -45,18 +45,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 70px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    margin-left: auto;
+    gap: 10px;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
+    gap: 10px;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -66,10 +67,17 @@ body {
 }
 
 .logo-img {
-    height: 90px;
+    height: 50px;
     width: auto;
     border-radius: 5px;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .logo-highlight {
@@ -81,11 +89,9 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 0;
     margin: 0;
     padding: 0;
-    flex: 1;
-    justify-content: center;
 }
 
 .nav-item {
@@ -95,11 +101,10 @@ body {
 .nav-link {
     color: white;
     text-decoration: none;
-    padding: 25px 15px;
+    padding: 25px 20px;
     display: block;
     transition: var(--transition);
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 500;
 }
 
 .nav-link:hover {
@@ -300,14 +305,13 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 70px;
         flex-direction: column;
         background-color: var(--primary-color);
         width: 100%;
         text-align: center;
         transition: var(--transition);
         gap: 0;
-        justify-content: flex-start;
     }
 
     .nav-menu.active {
@@ -317,27 +321,18 @@ body {
     .nav-link {
         padding: 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 16px;
     }
 
     .nav-logo {
-        margin-left: 0;
+        gap: 8px;
     }
 
     .logo-img {
-        height: 60px;
+        height: 40px;
     }
 
-    .hero-text h1 {
-        font-size: 36px;
-    }
-
-    .hero-subtitle {
+    .logo-text {
         font-size: 18px;
-    }
-
-    .hero-description {
-        font-size: 16px;
     }
 
     .dropdown-menu {
