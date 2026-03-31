@@ -219,6 +219,11 @@ body {
     border-radius: 10px;
 }
 
+.hero-logo-img--small {
+    height: 120px;
+    margin-left: 20px;
+}
+
 .hero-text h1 {
     margin: 0;
     font-size: 48px;
