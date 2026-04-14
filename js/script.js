@@ -57,14 +57,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
+                const contentDropdowns = document.querySelectorAll('.content-dropdown');
+                const isNavbarClick = this.closest('.navbar') !== null;
+
+                if (target.classList.contains('content-dropdown') && isNavbarClick) {
+                    contentDropdowns.forEach(dropdown => {
+                        dropdown.open = false;
+                    });
+                    target.open = true;
+                }
+
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+
+                history.replaceState(null, '', href);
             }
         }
     });
 });
+
+// Abrir automáticamente el desplegable cuando se accede con hash en la URL
+const openDropdownByHash = () => {
+    if (!window.location.hash) {
+        return;
+    }
+
+    const target = document.querySelector(window.location.hash);
+    if (target && target.classList.contains('content-dropdown')) {
+        document.querySelectorAll('.content-dropdown').forEach(dropdown => {
+            dropdown.open = false;
+        });
+        target.open = true;
+    }
+};
+
+// Evitar apertura manual desde los encabezados de contenido.
+document.querySelectorAll('.content-dropdown > summary').forEach(summary => {
+    summary.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+});
+
+openDropdownByHash();
+window.addEventListener('hashchange', openDropdownByHash);
 
 // Efecto de parallax suave en el hero (opcional)
 window.addEventListener('scroll', () => {
