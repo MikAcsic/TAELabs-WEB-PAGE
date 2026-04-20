@@ -279,6 +279,14 @@ body {
     text-align: center;
 }
 
+.hero-bottom-logo {
+    display: block;
+    width: min(460px, 88%);
+    height: auto;
+    margin: 22px auto 0;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22));
+}
+
 .hero-text {
     animation: slideInLeft 0.8s ease-out;
 }
@@ -603,42 +611,49 @@ body {
 
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 40px 20px;
+        gap: 18px;
+        padding: 10px 16px 18px;
+        margin-bottom: 18px;
     }
 
     .hero {
-        padding: 130px 16px 30px;
+        padding: 96px 16px 22px;
     }
 
     .hero-top-left-logos {
-        top: 12px;
+        top: 86px;
         left: auto;
-        right: 90px;
+        right: 14px;
         gap: 8px;
     }
 
     .hero-top-right-logos {
-        top: 12px;
-        right: 12px;
+        position: fixed;
+        top: 8px;
+        right: 10px;
+        z-index: 1190;
+        height: auto;
     }
 
-    .hero-top-left-logos img,
+    .hero-top-left-logos img {
+        height: 44px;
+    }
+
     .hero-top-right-logos img {
-        height: 46px;
+        height: 58px;
     }
 
     .hero-text h1 {
         position: fixed;
-        top: 20px;
+        top: 18px;
         left: 58px;
-        right: 10px;
+        right: 78px;
         z-index: 1150;
         margin: 0;
         border: none;
         padding: 0;
         text-align: left;
-        font-size: 19px;
+        font-size: 24px;
         color: #8B4513;
         line-height: 1.2;
         white-space: nowrap;
@@ -647,7 +662,7 @@ body {
     }
 
     .hero-text {
-        margin-top: 85px;
+        margin-top: 0;
     }
 
     .hero-text h2 {
@@ -656,11 +671,23 @@ body {
 
     .hero-subtitle {
         font-size: 16px;
+        margin-bottom: 14px;
+        line-height: 1.35;
     }
 
     .hero-description {
         font-size: 14px;
         text-align: left;
+        line-height: 1.55;
+    }
+
+    .hero-image-bottom {
+        margin-top: 10px;
+    }
+
+    .hero-bottom-logo {
+        width: min(380px, 92%);
+        margin-top: 18px;
     }
 
     .section-container h2 {
@@ -713,17 +740,22 @@ body {
     }
 
     .hero-top-left-logos {
-        right: 78px;
+        top: 84px;
+        right: 10px;
         gap: 6px;
     }
 
     .hero-top-right-logos {
-        right: 10px;
+        top: 8px;
+        right: 8px;
     }
 
-    .hero-top-left-logos img,
+    .hero-top-left-logos img {
+        height: 38px;
+    }
+
     .hero-top-right-logos img {
-        height: 40px;
+        height: 52px;
     }
 
     .title-with-logo {
@@ -736,14 +768,20 @@ body {
     }
 
     .hero-text h1 {
-        font-size: 17px;
+        font-size: 20px;
         left: 54px;
-        top: 22px;
+        right: 66px;
+        top: 20px;
     }
 
     .hero-content {
-        padding: 26px 12px;
-        margin-bottom: 40px;
+        padding: 8px 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .hero-bottom-logo {
+        width: min(320px, 94%);
+        margin-top: 16px;
     }
 
     .hero-subtitle {
