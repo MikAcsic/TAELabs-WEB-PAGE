@@ -613,48 +613,44 @@ body {
     }
 
     .hero {
-        padding: 96px 16px 22px;
+        padding: 88px 16px 22px;
     }
 
     .hero-top-left-logos {
-        top: 86px;
+        top: 8px;
         left: auto;
-        right: 14px;
-        gap: 8px;
+        right: 70px;
+        gap: 10px;
     }
 
     .hero-top-right-logos {
-        position: fixed;
+        position: absolute;
         top: 8px;
         right: 10px;
-        z-index: 1190;
+        z-index: 10;
         height: auto;
     }
 
     .hero-top-left-logos img {
-        height: 44px;
+        height: 46px;
     }
 
     .hero-top-right-logos img {
-        height: 58px;
+        height: 52px;
     }
 
     .hero-text h1 {
-        position: fixed;
-        top: 18px;
-        left: 58px;
-        right: 78px;
-        z-index: 1150;
-        margin: 0;
-        border: none;
-        padding: 0;
-        text-align: left;
-        font-size: 24px;
+        position: static;
+        margin: 0 0 12px;
+        border-bottom: 3px solid #8B4513;
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: clamp(38px, 7.5vw, 64px);
         color: #8B4513;
         line-height: 1.2;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
     }
 
     .hero-text {
@@ -666,8 +662,9 @@ body {
     }
 
     .hero-subtitle {
-        font-size: 16px;
-        margin-bottom: 14px;
+        font-size: 20px;
+        margin-top: -4px;
+        margin-bottom: 16px;
         line-height: 1.35;
     }
 
@@ -736,8 +733,9 @@ body {
     }
 
     .hero-top-left-logos {
-        top: 84px;
-        right: 10px;
+        top: 8px;
+        left: auto;
+        right: 60px;
         gap: 6px;
     }
 
@@ -747,11 +745,11 @@ body {
     }
 
     .hero-top-left-logos img {
-        height: 38px;
+        height: 40px;
     }
 
     .hero-top-right-logos img {
-        height: 52px;
+        height: 46px;
     }
 
     .title-with-logo {
@@ -764,10 +762,8 @@ body {
     }
 
     .hero-text h1 {
-        font-size: 20px;
-        left: 54px;
-        right: 66px;
-        top: 20px;
+        font-size: clamp(30px, 9vw, 44px);
+        margin-bottom: 10px;
     }
 
     .hero-content {
@@ -781,7 +777,8 @@ body {
     }
 
     .hero-subtitle {
-        font-size: 14px;
+        font-size: 18px;
+        margin-top: -2px;
         line-height: 1.4;
     }
 
