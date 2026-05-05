@@ -707,6 +707,20 @@ body {
 
     .ll-accordion summary {
         font-size: 16px;
+        cursor: pointer;
+        user-select: none;
+        display: block;
+    }
+
+    .ll-accordion details {
+        padding: 10px 12px;
+        overflow: visible;
+    }
+
+    .ll-accordion details p,
+    .ll-accordion details ul {
+        font-size: 14px;
+        margin-top: 8px;
     }
 
     .image-placeholder {
@@ -806,6 +820,24 @@ body {
 
     .content-dropdown-body {
         padding: 14px;
+    }
+
+    .ll-accordion summary {
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+        display: block;
+    }
+
+    .ll-accordion details {
+        padding: 8px 10px;
+        overflow: visible;
+    }
+
+    .ll-accordion details p,
+    .ll-accordion details ul {
+        font-size: 12px;
+        margin-top: 6px;
     }
 
     .image-placeholder {
