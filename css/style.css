@@ -279,12 +279,28 @@ body {
     text-align: center;
 }
 
+.hero-bottom-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 18px;
+}
+
 .hero-bottom-logo {
     display: block;
-    width: min(560px, 92%);
+    width: min(360px, 60%);
     height: auto;
-    margin: 28px auto 0;
+    margin: 0;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22));
+}
+
+.hero-bottom-contact {
+    color: #2b2f31;
+    font-weight: 600;
+    font-size: 16px;
+    align-self: flex-end;
+    margin-bottom: 8px;
 }
 
 .hero-text {
@@ -786,8 +802,20 @@ body {
     }
 
     .hero-bottom-logo {
-        width: min(380px, 96%);
-        margin-top: 18px;
+        width: min(260px, 80%);
+        margin-top: 10px;
+    }
+
+    .hero-bottom-row {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .hero-bottom-contact {
+        font-size: 14px;
+        align-self: center;
+        margin-bottom: 0;
     }
 
     .hero-subtitle {
