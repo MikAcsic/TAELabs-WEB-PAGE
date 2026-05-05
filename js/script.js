@@ -58,13 +58,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const target = document.querySelector(href);
             if (target) {
                 const contentDropdowns = document.querySelectorAll('.content-dropdown');
-                const isNavbarClick = this.closest('.navbar') !== null;
 
-                if (target.classList.contains('content-dropdown') && isNavbarClick) {
+                // Abrir el content-dropdown si es uno
+                if (target.classList.contains('content-dropdown')) {
                     contentDropdowns.forEach(dropdown => {
                         dropdown.open = false;
                     });
                     target.open = true;
+                }
+
+                // Cerrar el menú hamburguesa si está abierto
+                const navMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger');
+                if (navMenu && hamburger) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
                 }
 
                 target.scrollIntoView({
