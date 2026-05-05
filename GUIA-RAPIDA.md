@@ -5,7 +5,7 @@
 Se ha creado una página web profesional para el proyecto TAELabs con:
 
 ✅ **Navegación principal con menús desplegables** para las 5 categorías:
-   - ABOUT US (Our Aim, Consortium Structure, European Agroecology Partnerships)
+    - ABOUT US (Our Aim, Consortium Structure, European Agroecology Partnership)
    - TAELabs Project (Profile & Approach, Vision & Mission, Work Packages)
    - Living Labs (Key Concepts, Living Labs Description)
    - Knowledge Hub (Deliverables, Research Papers, Policy Papers, Communications)
@@ -153,7 +153,7 @@ El menú actual incluye:
 ABOUT US ▼
 ├── Our Aim
 ├── Consortium Structure
-└── European Agroecology Partnerships
+└── European Agroecology Partnership
 
 TAELabs Project ▼
 ├── Project Profile & Approach
