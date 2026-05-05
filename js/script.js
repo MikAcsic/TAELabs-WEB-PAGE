@@ -93,13 +93,6 @@ const openDropdownByHash = () => {
     }
 };
 
-// Evitar apertura manual desde los encabezados de contenido.
-document.querySelectorAll('.content-dropdown > summary').forEach(summary => {
-    summary.addEventListener('click', (e) => {
-        e.preventDefault();
-    });
-});
-
 openDropdownByHash();
 window.addEventListener('hashchange', openDropdownByHash);
 

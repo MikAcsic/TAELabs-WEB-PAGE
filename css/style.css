@@ -405,7 +405,7 @@ body {
 
 .content-dropdown summary {
     list-style: none;
-    cursor: default;
+    cursor: pointer;
     font-size: 32px;
     color: #8B4513;
     font-weight: 700;
@@ -419,10 +419,6 @@ body {
 
 .content-dropdown summary::-webkit-details-marker {
     display: none;
-}
-
-.content-dropdown > summary {
-    pointer-events: none;
 }
 
 .content-dropdown summary::after {
