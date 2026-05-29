@@ -115,10 +115,29 @@ window.addEventListener('scroll', () => {
 });
 
 // Contador de visitas usando un servicio externo compatible con webs estáticas
+const VISIT_COUNT_STORAGE_KEY = 'taelabs-page-visits';
+
+const setVisitCount = (value) => {
+    const formattedValue = Number(value).toLocaleString('es-ES');
+    visitCountElements.forEach((element) => {
+        element.textContent = formattedValue;
+    });
+};
+
+const updateLocalVisitCount = () => {
+    const storedValue = Number(localStorage.getItem(VISIT_COUNT_STORAGE_KEY) || '0');
+    const nextValue = storedValue + 1;
+    localStorage.setItem(VISIT_COUNT_STORAGE_KEY, String(nextValue));
+    return nextValue;
+};
+
 const trackPageVisits = async () => {
     if (!visitCountElements.length) {
         return;
     }
+
+    const localValue = updateLocalVisitCount();
+    setVisitCount(localValue);
 
     try {
         const namespace = 'taelabs-web-page';
@@ -130,14 +149,13 @@ const trackPageVisits = async () => {
         }
 
         const data = await response.json();
-        const visitCount = Number(data.value).toLocaleString('es-ES');
-        visitCountElements.forEach((element) => {
-            element.textContent = visitCount;
-        });
+        const remoteValue = Number(data.value);
+
+        if (Number.isFinite(remoteValue) && remoteValue > 0) {
+            localStorage.setItem(VISIT_COUNT_STORAGE_KEY, String(remoteValue));
+            setVisitCount(remoteValue);
+        }
     } catch (error) {
-        visitCountElements.forEach((element) => {
-            element.textContent = 'N/A';
-        });
         console.warn('No se pudo cargar el contador de visitas:', error);
     }
 };
