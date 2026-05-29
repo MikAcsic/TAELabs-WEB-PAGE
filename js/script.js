@@ -3,6 +3,7 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 const dropdowns = document.querySelectorAll('.dropdown');
+const visitCountElements = document.querySelectorAll('.visit-counter-value');
 
 // Toggle del Hamburger Menu
 hamburger.addEventListener('click', () => {
@@ -112,5 +113,35 @@ window.addEventListener('scroll', () => {
         hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
     }
 });
+
+// Contador de visitas usando un servicio externo compatible con webs estáticas
+const trackPageVisits = async () => {
+    if (!visitCountElements.length) {
+        return;
+    }
+
+    try {
+        const namespace = 'taelabs-web-page';
+        const key = 'home';
+        const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+
+        if (!response.ok) {
+            throw new Error('No se pudo obtener el contador');
+        }
+
+        const data = await response.json();
+        const visitCount = Number(data.value).toLocaleString('es-ES');
+        visitCountElements.forEach((element) => {
+            element.textContent = visitCount;
+        });
+    } catch (error) {
+        visitCountElements.forEach((element) => {
+            element.textContent = 'N/A';
+        });
+        console.warn('No se pudo cargar el contador de visitas:', error);
+    }
+};
+
+trackPageVisits();
 
 console.log('TAELabs Website - Script cargado correctamente');

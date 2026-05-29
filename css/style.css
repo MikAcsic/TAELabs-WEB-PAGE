@@ -303,6 +303,44 @@ body {
     margin-bottom: 8px;
 }
 
+.visit-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(44, 62, 80, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    color: #2b2f31;
+    font-weight: 600;
+    z-index: 11;
+    backdrop-filter: blur(8px);
+}
+
+.visit-counter--mobile {
+    display: none;
+}
+
+.visit-counter-label {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.visit-counter-value {
+    min-width: 3.1rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
 .hero-text {
     animation: slideInLeft 0.8s ease-out;
 }
@@ -557,6 +595,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
+        position: relative;
         justify-content: flex-start;
     }
 
@@ -630,6 +669,18 @@ body {
 
     .hero {
         padding: 88px 16px 22px;
+    }
+
+    .visit-counter--desktop {
+        display: none;
+    }
+
+    .visit-counter--mobile {
+        display: inline-flex;
+        position: absolute;
+        top: 15px;
+        right: 12px;
+        z-index: 1200;
     }
 
     .hero-top-left-logos {
@@ -816,6 +867,15 @@ body {
         font-size: 14px;
         align-self: center;
         margin-bottom: 0;
+    }
+
+    .visit-counter-label {
+        font-size: 11px;
+    }
+
+    .visit-counter-value {
+        min-width: 2.8rem;
+        font-size: 13px;
     }
 
     .hero-subtitle {
