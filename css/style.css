@@ -679,9 +679,10 @@ body {
         display: inline-flex;
         position: absolute;
         top: 15px;
-        left: calc(50% + 14px);
+        /* left se setea dinámicamente con JS para centrar sobre los logos */
+        left: auto;
         right: auto;
-        transform: translateX(-50%);
+        transform: none;
         z-index: 1200;
     }
 

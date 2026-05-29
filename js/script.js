@@ -162,4 +162,37 @@ const trackPageVisits = async () => {
 
 trackPageVisits();
 
+// Alinear el contador móvil exactamente sobre el centro de los logos
+const alignVisitCounter = () => {
+    const counter = document.querySelector('.visit-counter--mobile');
+    const logos = document.querySelector('.hero-top-left-logos');
+    const navContainer = document.querySelector('.nav-container');
+    if (!counter || !logos || !navContainer) return;
+
+    // asegurarnos de medir sin transformaciones
+    counter.style.transform = 'none';
+    counter.style.right = 'auto';
+
+    const logosRect = logos.getBoundingClientRect();
+    const navRect = navContainer.getBoundingClientRect();
+    const counterRect = counter.getBoundingClientRect();
+
+    // calcular left relativo al contenedor de navegación
+    const left = (logosRect.left - navRect.left) + (logosRect.width / 2) - (counterRect.width / 2);
+
+    // aplicar con límite para que no salga del contenedor
+    const minLeft = 6; // pequeño margen
+    const maxLeft = navRect.width - counterRect.width - 6;
+    const finalLeft = Math.min(Math.max(left, minLeft), maxLeft);
+
+    counter.style.left = `${finalLeft}px`;
+};
+
+window.addEventListener('resize', alignVisitCounter);
+window.addEventListener('load', () => {
+    // esperar imágenes cargadas
+    setTimeout(alignVisitCounter, 120);
+});
+
+
 console.log('TAELabs Website - Script cargado correctamente');
