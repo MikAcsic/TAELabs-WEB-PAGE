@@ -679,7 +679,7 @@ body {
         display: inline-flex;
         position: absolute;
         top: 15px;
-        left: calc(50% + 8px);
+        left: calc(50% + 14px);
         right: auto;
         transform: translateX(-50%);
         z-index: 1200;
