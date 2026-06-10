@@ -143,6 +143,43 @@ body {
     border-top: 3px solid var(--secondary-color);
 }
 
+/* Submenú dentro del dropdown (oculto por defecto, se muestra al click) */
+.dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: white;
+    min-width: 260px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    border-left: 1px solid rgba(0,0,0,0.04);
+    z-index: 1020;
+}
+
+.dropdown-submenu.open {
+    display: block;
+}
+
+/* Ajustes para mobile: se muestra cuando .dropdown tiene la clase active */
+@media (max-width: 768px) {
+    .dropdown-submenu {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        min-width: auto;
+    }
+
+    .dropdown.active .dropdown-submenu {
+        display: block;
+    }
+
+    .dropdown-submenu a {
+        color: white;
+        padding-left: 30px;
+        display: block;
+    }
+}
+
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;

@@ -33,6 +33,34 @@ dropdownToggles.forEach(toggle => {
     });
 });
 
+// Submenú de Deliverables: visible al tocarlo también en móvil
+document.querySelectorAll('.dropdown-link').forEach((link) => {
+    const submenu = link.nextElementSibling;
+    if (!submenu || !submenu.classList.contains('dropdown-submenu')) {
+        return;
+    }
+
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const isMobile = window.innerWidth <= 768;
+        document.querySelectorAll('.dropdown-submenu.open').forEach((openSubmenu) => {
+            if (openSubmenu !== submenu) {
+                openSubmenu.classList.remove('open');
+            }
+        });
+
+        submenu.classList.toggle('open');
+
+        if (isMobile) {
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                parentDropdown.classList.add('active');
+            }
+        }
+    });
+});
+
 // Cerrar menús desplegables al hacer clic fuera
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-item')) {
@@ -196,3 +224,33 @@ window.addEventListener('load', () => {
 
 
 console.log('TAELabs Website - Script cargado correctamente');
+
+// Mostrar/ocultar submenús sólo al clicar en el item padre
+document.addEventListener('DOMContentLoaded', () => {
+    const submenuParents = document.querySelectorAll('.dropdown-link');
+
+    submenuParents.forEach(link => {
+        const next = link.nextElementSibling;
+        if (next && next.classList && next.classList.contains('dropdown-submenu')) {
+            // evitar comportamiento por defecto en escritorio y alternar submenu
+            link.addEventListener('click', (e) => {
+                // en móviles dejamos que el flujo actual gestione la apertura
+                if (window.innerWidth > 768) {
+                    e.preventDefault();
+                    // cerrar otros submenús
+                    document.querySelectorAll('.dropdown-submenu.open').forEach(s => {
+                        if (s !== next) s.classList.remove('open');
+                    });
+                    next.classList.toggle('open');
+                }
+            });
+        }
+    });
+
+    // Cerrar submenús al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-submenu') && !e.target.closest('.dropdown-link')) {
+            document.querySelectorAll('.dropdown-submenu.open').forEach(s => s.classList.remove('open'));
+        }
+    });
+});
