@@ -484,6 +484,7 @@ body {
 
 .section-container p {
     margin-bottom: 16px;
+    text-align: justify;
 }
 
 .content-dropdown {
